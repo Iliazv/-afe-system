@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Cafe{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'application/style.css' %}">
+    <link href='https://fonts.googleapis.com/css?family=Noto Sans' rel='stylesheet'>
+    <script src="https://unpkg.com/htmx.org@1.8.5" integrity="sha384-7aHh9lqPYGYZ7sTHvzP1t3BAfLhYSTy9ArHdP3Xsr9/3TlGurYgcPBoFmXX2TX/w" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="head__content">
+                <div class="head__flex">
+                    <a href="{% url 'main_page' %}" style="text-decoration: none;">
+                        <div class="head__left">
+                            <div class="head__logo">
+                                <box-icon type='solid' name='coffee'></box-icon>
+                            </div>
+                            <div class="head__name">
+                                Coffe system
+                            </div>
+                        </div>
+                    </a>
+                    <div class="head__right">
+                        <a href="{% url 'create_order' %}"><img src="{% static 'application/add.png' %}" class="menu_icon" alt=""></a>
+                        <a href="{% url 'revenue_page' %}"><img src="{% static 'application/money.png' %}" class="menu_icon" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section>
+            <div class="page">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </section>
+    </div>
+</body>
+</html>

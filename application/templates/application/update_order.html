@@ -1,0 +1,17 @@
+{% extends "application/base.html" %}
+{% load static %}
+
+{% block content %}
+<section>
+    <div class="page">
+        <div class="page__title">
+            Изменение статуса
+        </div>
+        <form method="POST" class="page__form">
+            {% csrf_token %}
+            {{ form.status }}
+            <button class="page__submit shift">Обновить заказ</button>
+        </form>
+    </div>
+</section>
+{% endblock %}

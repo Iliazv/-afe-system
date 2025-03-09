@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans';
+    font-weight: 600;
+    box-sizing: border-box;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid rgb(191, 191, 191);
+}
+
+.head__content {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.page {
+    padding: 20px 0 0 0;
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.head__logo {
+    transform: translateY(1.5px);
+}
+
+.head__flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.head__left {
+    display: flex;
+    align-items: center;
+}
+
+.head__right {
+    width: 80px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.head__name {
+    text-decoration: none;
+    color: #000;
+    margin: 0 0 0 10px;
+}
+
+.list {
+    margin: 15px 0 0 0;
+    width: 1000px;
+    display: flex;
+    flex-direction: column;
+}
+
+.list__item:nth-child(2n) {
+    background-color: rgb(222, 222, 222);
+}
+
+.list__item:nth-child(2n + 1) {
+    background-color: rgb(255, 250, 236);
+}
+
+.list__item {
+    width: 1000px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.list__number {
+    flex-basis: 10%;
+}
+.list__name {
+    flex-basis: 50%;
+}
+.list__table {
+    flex-basis: 20%;
+}
+.list__price {
+    flex-basis: 25%;
+}
+/* .list__delete {
+    flex-basis: 10%;
+}
+.list__change {
+    flex-basis: 10%;
+} */
+
+.table_field {
+    width: 250px;
+    padding: 2px 0 2px 5px;
+}
+
+.menu_icon {
+    width: 30px;
+    height: 30px;
+}
+
+.menu_icon_small {
+    width: 22px;
+    height: 22px;
+    margin: 0 6px;
+}
+
+.scale-icon:hover {
+    filter: invert(0.5);
+}
+
+.page__form {
+    display: flex;
+    flex-direction: column;
+}
+
+.submit-btn {
+    width: 25px;
+    height: 25px;
+    background-color: transparent;
+    border: transparent;
+    cursor: pointer;
+}
+
+.page__title {
+    padding: 0 0 15px 0;
+}
+
+.page__label {
+    padding: 25px 0 15px 0;
+}
+
+.page__adding {
+    padding: 15px 0 0 0;
+    display: flex;
+}
+
+.dish__form {
+    display: flex;
+    flex-direction: column;
+}
+
+.dish__form input {
+    width: 250px;
+    margin: 10px 0 0 0;
+    padding: 2px 0 2px 5px;
+}
+
+.page__submit {
+    margin: 15px 0 0 0;
+    width: 250px;
+}
+
+.shift {
+    margin: 30px 0 0 0;
+}
+
+#id_status {
+    width: 250px;
+}
+
+.page__sub {
+    margin: 0 0 0 5px;
+}

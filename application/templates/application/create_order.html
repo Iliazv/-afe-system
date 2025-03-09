@@ -1,0 +1,72 @@
+{% extends "application/base.html" %}
+{% load static %}
+
+{% block content %}
+<section>
+    <div class="page">
+        <div class="page__title">
+            Создание заказа
+        </div>
+        <form method="POST" class="page__form">
+            {% csrf_token %}
+            {{ form.table_number }}
+
+            <button class="page__submit">Создать заказ</button>
+
+            <div class="page__label">Список блюд:</div>
+
+            <div class="dish__list" id="dish-list">
+                <div class="dish__form">
+                    <div class="dish__label">Блюдо #1</div>
+                    <input type="text" name="dish_1" placeholder="Блюдо" required>
+                    <input type="number" name="number_1" placeholder="Стоимость" required>
+                </div>
+            </div>
+
+            <div class="page__adding">
+                <button type="button" class="submit-btn" id="submit-button"><box-icon type='solid' name='plus-circle'></box-icon></button>
+                <div class="page__sub">Добавить блюдо</div>
+            </div>
+
+        </form>
+    </div>
+</section>
+
+<script>
+    let dishCount = 1; // To keep track of the number of dishes
+
+    const addButton = document.getElementById('submit-button')
+    const dishList = document.getElementById('dish-list')
+
+    addButton.addEventListener('click', function() {
+        dishCount++; // Increment the count for a new dish
+
+        // Create a new dish form
+        const newDishForm = document.createElement('div');
+        newDishForm.className = 'dish__label';
+
+        newDishForm.style.marginTop = '20px';
+        newDishForm.className = 'dish__form';
+        newDishForm.innerText = `Блюдо #${dishCount}`;
+
+        // Create input elements
+        const dishInput = document.createElement('input');
+        dishInput.type = 'text';
+        dishInput.name = `dish_${dishCount}`
+        dishInput.placeholder = 'Блюдо';
+
+        const priceInput = document.createElement('input');
+        priceInput.type = 'number';
+        priceInput.name = `number_${dishCount}`
+        priceInput.placeholder = 'Стоимость';
+
+        // Append inputs to the new dish form
+        newDishForm.appendChild(dishInput);
+        newDishForm.appendChild(priceInput);
+
+        // Append the new dish form to the dish list
+        dishList.appendChild(newDishForm);
+    });
+</script>
+
+{% endblock %}

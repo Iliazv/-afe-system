@@ -1,0 +1,12 @@
+{% extends "application/base.html" %}
+{% load static %}
+
+{% block content %}
+<section>
+    <div class="page">
+        <div class="page__title">
+            Общая выручка: {{ all_revenue_count.total }} ₽
+        </div>
+    </div>
+</section>
+{% endblock %}

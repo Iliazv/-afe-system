@@ -1,0 +1,13 @@
+{% extends "application/base.html" %}
+{% load static %}
+
+{% block content %}
+<section>
+    <div class="page">
+        <form method="post">{% csrf_token %}
+        <p>Вы уверены что хотите удалить заказ?</p>
+            <input type="submit" value="Подтвердить" style="margin-top: 15px;">
+        </form>
+    </div>
+</section>
+{% endblock %}

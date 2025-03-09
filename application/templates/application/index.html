@@ -1,0 +1,34 @@
+{% extends "application/base.html" %}
+{% load static %}
+
+{% block content %}
+<section id="page-template">
+    <div class="page">
+        <input type="text" placeholder="Поиск заказов" name="search_field" hx-get="{% url 'main_page' %}" hx-target="#page-template" hx-trigger="keyup changed delay:800ms">
+        <div class="list">
+            {% for order in order_list %}
+            <div class="list__item">
+                <div class="list__number">
+                    #{{ order.pk }}
+                </div>
+                <div class="list__name">
+                    {{ order.status }}
+                </div>
+                <div class="list__table">
+                    Стол #{{ order.table_number }}
+                </div>
+                <div class="list__price">
+                    {{ order.total_price }} ₽
+                </div>
+                <div class="list__delete">
+                    <a href="{% url 'delete_order' pk=order.pk %}"><img src="{% static 'application/delete.png' %}" class="menu_icon_small" alt=""></a>
+                </div>
+                <div class="list__change">
+                    <a href="{{ order.get_absolute_url }}"><img src="{% static 'application/edit.png' %}" class="menu_icon_small" alt=""></a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}
