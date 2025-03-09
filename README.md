@@ -10,7 +10,7 @@ Python, Django, Django Rest Framework, HTML, CSS, JS, htmx, SQLite
 
 Далее требуется провести миграцию и авторизироваться под администратором 
 
-### login: admin
+##### login: admin
 
-### password: admin
+##### password: admin
 Либо создать нового супер юзера
