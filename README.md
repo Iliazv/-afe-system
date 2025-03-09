@@ -9,6 +9,8 @@ Python, Django, Django Rest Framework, HTML, CSS, JS, htmx, SQLite
 Для использования приложения требуется установить все зависимости из файла requrements.txt
 
 Далее требуется провести миграцию и авторизироваться под администратором 
-login: admin
-password: admin
+
+### login: admin
+
+### password: admin
 Либо создать нового супер юзера
